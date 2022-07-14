@@ -13,3 +13,7 @@ Monday 18th - continue working on visulisations, adding to js
 Tuesday 19th - continue working on visulisations, adding to js
 Thursday 21st - final web development and presentation practice
 Monday 25th - Polish presentation
+
+<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+<link rel="stylesheet" href="css/leaflet.awesome-markers.css">
+<script src="js/leaflet.awesome-markers.js"></script>
