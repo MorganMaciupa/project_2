@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Australian Energy Production & Consumption</title>
+
+  <!-- Bring in our bootstrap stylesheets -->
+
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+    crossorigin="anonymous">
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+
+  <!-- Local css stylesheet  -->
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="bootstrap.css">
+
+  <!-- leaflet Awesome Markers Plug In  -->
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+  <link rel="stylesheet" href="css/leaflet.awesome-markers.css">
+  <script src="js/leaflet.awesome-markers.js"></script>
+
+
+</head>
+
+<body>
+
+  <!-- NAV BAR -->
+  <!-- Includes expand settings for small vs large screens -->
+  <!-- Small screens display a drop down box to display navigation options -->
+  <!-- Large screens display all navigation options individually along the nav bar -->
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link" href="data.html">The Data</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="insight1.html">Insight 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="insight2.html">Insight 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="insight3.html">Insight 3</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="insight4.html">Insight 4</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="insight5.html">Insight 5</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="insight6.html">Insight 6</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- COMPLETE - NAV BAR -->
+
+
+  <!-- GRID / PAGE LAYOUT -->
+
+  <div class="container">
+
+    <!-- Row 1 -->
+    <div class="row">
+      <div class="col-md-12">
+
+        <h1>
+          <center> <br> Dashboard Title - Common Theme: States <br><br> </center>
+        </h1>
+
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img src="carlys\Images\PercentageOfDevelopedVsDevelopingCountries.png" class="card-img-bottom"
+            alt="Data Visualisation 1 Image">
+          <div class="card-body">
+            <h5 class="card-title">Data Visualisation 1</h5>
+            <p class="card-text"><br><br>Which state has the highest population? Which state has the lowest?
+              <br><br>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">card foot text</small>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="carlys\Images\PowerCapacityAndGNIRelationship.png" class="card-img-bottom"
+            alt="Data Visualisation 2 Image">
+          <div class="card-body">
+            <h5 class="card-title">Data Visualisation 2</h5>
+            <p class="card-text"><br><br>Which state has the highest median income? Which state has the lowest?<br><br>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">card foot text</small>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="carlys\Images\PowerCapacityCountryStatusOutliers.png" class="card-img-bottom"
+            alt="Data Visualisation 3 Image">
+          <div class="card-body">
+            <h5 class="card-title">Data Visualisation 3</h5>
+            <p class="card-text"><br><br>Which state produces the most energy per capita? which state produces the
+              least? Divided into renewable vs non renewable.<br><br>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">card foot text</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <br>
+
+    <div class="row">
+      <div class="col">
+        <div class="card h-100">
+          <img src="carlys\Images\Primary Fuel For Developed Countries.png" class="card-img-bottom"
+            alt="Data Visualisation 5 Image">
+          <div class="card-body">
+            <h5 class="card-title">Data Visualisation 5</h5>
+            <p class="card-text"><br><br>Do states with a higher population have a higher percentage of renewable energy
+              production? State population vs the % of energy productions that is renewable.<br><br>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">card foot text</small>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="carlys\Images\Primary Fuel For Developing Countries.png" class="card-img-bottom"
+            alt="Data Visualisation 6 Image">
+          <div class="card-body">
+            <h5 class="card-title">Data Visualisation 6</h5>
+            <p class="card-text"><br>Do states with a higher median income have a higher percentage of renewable energy
+              production? State median income vs the % of energy productions that is renewable.<br><br><br><br>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">card foot text</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 4 -->
+    <br>
+
+    <div class="row">
+      <div class="col">
+        <div class="card mb-3">
+          <img src="carlys\Images\Primary Fuel Comparison Chart.png" class="card-img-top"
+            alt="Data Visualisation 4 Image">
+
+          <div class="card-body">
+            <h5 class="card-title">Data Visualisation 4 - INTERACTIVE MAP</h5>
+            <p class="card-text"><br><br>
+
+              * INTERACTIVE MAP - locations of power plants with icons that indicate renewable energy plans and non
+              renewable energy plants
+
+              Maybe a visualisation that shows each state renewables growth? Ie, a double bar graph, showing the amount
+              of renewable plants in WA in 2013 next to the amount of renewable plants in WA in 2020.
+
+              <br><br>
+            </p>
+            <p class="card-footer"><small class="text-muted">card foot text</small></p>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPLETE - GRID / PAGE LAYOUT -->
+
+</body>
+
+<!-- PAGE FOOTER -->
+<footer>
+  <div class="container">
+
+    <!-- Row 1 -->
+    <div class="row">
+      <div class="col-md-12">
+        <center>
+          <br><br>
+
+          <a href="https://github.com/MorganMaciupa " class="link">See more work from Morgan at her Git Hub</a><br>
+          <a href="https://github.com/FaresKazemi" class="link">See more work from Karin at his Git Hub</a><br>
+          <a href="https://github.com/Carly-Jane" class="link">See more work from Carly at her Git Hub</a><br>
+
+
+          <br>
+        </center>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<!-- COMPLETE - PAGE FOOTER -->
+
+</html>
