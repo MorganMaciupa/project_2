@@ -46,19 +46,19 @@ info.onAdd = function() {
 info.addTo(map);
 
   // Creates a red marker with the coffee icon
-  var redMarker = L.AwesomeMarkers.icon({
-    icon: 'coffee',
-    markerColor: 'red'
+  var greenMarker = L.AwesomeMarkers.icon({
+    icon: 'earth',
+    markerColor: 'green'
   });
       
-  L.marker([51.941196,4.512291], {icon: redMarker}).addTo(map);
+  L.marker([51.941196,4.512291], {icon: greenMarker}).addTo(map);
 
 // Perform an API call to the Citi Bike Station Information endpoint
 d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json").then(function(infoRes) {
 
   // When the first API call is complete, perform another call to the Citi Bike Station Status endpoint
-  d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_status.json").then(function(statusRes) {
-    var stationStatus = statusRes.data.stations;
+  d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_status.json").then(function(typeRes) {
+    var stationStatus = typeRes.data.stations;
     var stationInfo = infoRes.data.stations;
 
     // Create an object to keep of the number of markers in each layer
@@ -70,14 +70,30 @@ d3.json("https://gbfs.citibikenyc.com/gbfs/en/station_information.json").then(fu
     // Initialize a stationStatusCode, which will be used as a key to access the appropriate layers, icons, and station count for layer group
     var energyStatusCode;
 
+    // Diesel
+    // Gas                     
+    // Wind                    
+    // Solar                   
+    // Landfill Gas            
+    // Hydro                   
+    // Black Coal              
+    // Waste Coal Mine Gas     
+    // Coal Seam Methane        
+    // Brown Coal               
+    // Battery                  
+    // Bagasse                  
+    // Sludge Biogas            
+    // Biofuel                  
+    // Kerosene                 
+
     // Loop through the stations (they're the same size and have partially matching data)
     for (var i = 0; i < stationInfo.length; i++) {
 
       // Create a new station object with properties of both station objects
       var station = Object.assign({}, stationInfo[i], stationStatus[i]);
       // If a station is listed but not installed, it's coming soon
-      if (!station.is_installed) {
-        stationStatusCode = "COMING_SOON";
+      if (!primaryFuel.is_installed) {
+        primaryFuel_type = "Wind";
       }
       // If a station has no bikes available, it's empty
       else if (!station.num_bikes_available) {
