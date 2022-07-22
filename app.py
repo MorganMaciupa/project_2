@@ -8,20 +8,6 @@ from flask import Flask, jsonify, render_template
 # Use PyMongo to establish Mongo connection
 mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_data_app")
 
-# reflect an existing database into a new model
-Base = automap_base()
-
-# Reflect the tables
-Base.prepare(engine, reflect=True)
-engine.table_names()
-
-# Save references to each table in database
-fourt_fift_energy_production = Base.classes.Fourteen_Fifteen_Energy_Production
-sevt_eight_energy_production = Base.classes.Seventeen_Eighteen_Energy_Production
-twe_twentyo_energy_production = Base.classes.Twenty_Twentyone_Energy_Production
-aus_population = Base.classes.Aus_Population
-aus_income = Base.classes.Aus_Income
-
 # Create an instance of Flask
 app = Flask(__name__)
 
