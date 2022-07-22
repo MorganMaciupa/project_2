@@ -1,37 +1,81 @@
-from flask import Flask, render_template, redirect
+import numpy as np
+import psycopg2
+import sqlalchemy
 from flask_pymongo import PyMongo
-import scrape_mars
 
-# Create an instance of Flask
-app = Flask(__name__)
+from flask import Flask, jsonify, render_template
 
 # Use PyMongo to establish Mongo connection
 mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_data_app")
 
+# reflect an existing database into a new model
+Base = automap_base()
+
+# Reflect the tables
+Base.prepare(engine, reflect=True)
+engine.table_names()
+
+# Save references to each table in database
+fourt_fift_energy_production = Base.classes.Fourteen_Fifteen_Energy_Production
+sevt_eight_energy_production = Base.classes.Seventeen_Eighteen_Energy_Production
+twe_twentyo_energy_production = Base.classes.Twenty_Twentyone_Energy_Production
+aus_population = Base.classes.Aus_Population
+aus_income = Base.classes.Aus_Income
+
+# Create an instance of Flask
+app = Flask(__name__)
 
 # Route to render index.html template using data from Mongo
 @app.route("/")
 def home():
 
-    # Find one record of data from the mongo database
-    mars_data = mongo.db.collection.find_one()
+    return render_template("index.html")
+    # return (
+    #     f"Available Routes:<br/>"
+    #     f"-------------------------------<br/>"
+    #     f"/api/v1.0/population_vs_state<br/>"
+    #     f"/api/v1.0/income_vs_state</br>"
+    #     f"/api/v1.0/energyproduction_vs_state</br>"
+    #     f"/api/v1.0/population_vs_energytype</br>"
+    #     f"/api/v1.0/income_vs_energytype</br>"
+    #     f"/api/v1.0/map</br>"
+    # )
 
-    # Return template and data
-    return render_template("index.html", mars_data=mars_data)
 
 
-# Route that will trigger the scrape function
-@app.route("/scrape")
-def scrape():
+@app.route("/api/v1.0/population_vs_state")
+def population():
+    # Create our session (link) from Python to the DB
+    session = Session(engine)
 
-    # Run the scrape function
-    mars_info = scrape_mars.scrape_info()
+    """Return API of population details per state and energy production per state"""
 
-    # Update the Mongo database using update and upsert=True
-    mongo.db.collection.update({}, mars_info, upsert=True)
+    # Query all incident details
+    results = session.query(aus_population.State, aus_population.Male, aus_population.Female, aus_population.Total
+                            ).all()
 
-    # Redirect back to home page
-    return redirect("/")
+    session.close()
+
+    # Create a dictionary from the row data and append to a list of all incidents
+    incident_test = []
+
+    for mine_id, incident_activity, incident_category, incident_day, incident_month, incident_type, incident_year in results:
+
+        incident_test_dict = {}
+
+        incident_test_dict["mine_id"] = mine_id
+        incident_test_dict["incident_activity"] = incident_activity
+        incident_test_dict["incident_category"] = incident_category
+        incident_test_dict["incident_day"] = incident_day
+        incident_test_dict["incident_month"] = incident_month
+        incident_test_dict["incident_type"] = incident_type
+        incident_test_dict["incident_year"] = incident_year
+
+        incident_test.append(incident_test_dict)
+
+    return jsonify(incident_test)
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
