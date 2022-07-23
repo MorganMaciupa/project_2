@@ -1,0 +1,65 @@
+[{
+  "_id": {
+    "$oid": "62da9b62667d874cec30aa91"
+  },
+  "State": "New South Wales",
+  "Male": 3984166,
+  "Female": 4087995,
+  "Total": 8072163
+},{
+  "_id": {
+    "$oid": "62da9b62667d874cec30aa92"
+  },
+  "State": "Victoria",
+  "Male": 3200963,
+  "Female": 3302528,
+  "Total": 6503491
+},{
+  "_id": {
+    "$oid": "62da9b62667d874cec30aa93"
+  },
+  "State": "Queensland",
+  "Male": 2540404,
+  "Female": 2615736,
+  "Total": 5156138
+},{
+  "_id": {
+    "$oid": "62da9b62667d874cec30aa94"
+  },
+  "State": "South Australia",
+  "Male": 878592,
+  "Female": 902924,
+  "Total": 1781516
+},{
+  "_id": {
+    "$oid": "62da9b62667d874cec30aa95"
+  },
+  "State": "Western Australia",
+  "Male": 1322855,
+  "Female": 1337171,
+  "Total": 2660026
+},{
+  "_id": {
+    "$oid": "62da9b62667d874cec30aa96"
+  },
+  "State": "Tasmania",
+  "Male": 273765,
+  "Female": 283804,
+  "Total": 557571
+},{
+  "_id": {
+    "$oid": "62da9b62667d874cec30aa97"
+  },
+  "State": "Northern Territory",
+  "Male": 117526,
+  "Female": 115075,
+  "Total": 232605
+},{
+  "_id": {
+    "$oid": "62da9b62667d874cec30aa98"
+  },
+  "State": "Australian Capital Territory",
+  "Male": 224361,
+  "Female": 230140,
+  "Total": 454499
+}]

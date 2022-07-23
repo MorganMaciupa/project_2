@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "62da9b62667d874cec30aa9a"
+  },
+  "State": "New South Wales",
+  "Median_Income": 813
+},{
+  "_id": {
+    "$oid": "62da9b62667d874cec30aa9b"
+  },
+  "State": "Victoria",
+  "Median_Income": 803
+},{
+  "_id": {
+    "$oid": "62da9b62667d874cec30aa9c"
+  },
+  "State": "Queensland",
+  "Median_Income": 787
+},{
+  "_id": {
+    "$oid": "62da9b62667d874cec30aa9d"
+  },
+  "State": "South Australia",
+  "Median_Income": 734
+},{
+  "_id": {
+    "$oid": "62da9b62667d874cec30aa9e"
+  },
+  "State": "Western Australia",
+  "Median_Income": 848
+},{
+  "_id": {
+    "$oid": "62da9b62667d874cec30aa9f"
+  },
+  "State": "Tasmania",
+  "Median_Income": 701
+},{
+  "_id": {
+    "$oid": "62da9b62667d874cec30aaa0"
+  },
+  "State": "Northern Territory",
+  "Median_Income": 936
+},{
+  "_id": {
+    "$oid": "62da9b62667d874cec30aaa1"
+  },
+  "State": "Australian Capital Territory",
+  "Median_Income": 1203
+},{
+  "_id": {
+    "$oid": "62da9b62667d874cec30aaa2"
+  },
+  "State": "Australia(b)",
+  "Median_Income": 805
+}]
