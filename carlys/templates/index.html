@@ -2,32 +2,15 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
-  <title>Australian Energy Production & Consumption</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Australian Energy Production and Consumption</title>
 
   <!-- Bring in our bootstrap stylesheets -->
-
-  <!-- CSS only -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-    rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-    crossorigin="anonymous">
-
-  <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
   <!-- Local css stylesheet  -->
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="bootstrap.css">
-
-  <!-- leaflet Awesome Markers Plug In  -->
-  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
-  <link rel="stylesheet" href="css/leaflet.awesome-markers.css">
-  <script src="js/leaflet.awesome-markers.js"></script>
-
 
 </head>
 
@@ -97,17 +80,12 @@
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <div class="col">
         <div class="card h-100">
-          <img src="carlys\Images\PercentageOfDevelopedVsDevelopingCountries.png" class="card-img-bottom"
-            alt="Data Visualisation 1 Image">
           <div class="card-body">
             <h5 class="card-title">Data Visualisation 1</h5>
             <p class="card-text"><br><br>Which state has the highest population? Which state has the lowest?
               <br><br>
 
             <div id="plot"></div>
-            <!-- D3.js CDN -->
-            <script src="https://d3js.org/d3.v5.min.js"></script>
-            <script src="population_plot.js"></script>
 
           </div>
           <div class="card-footer">
@@ -117,8 +95,6 @@
       </div>
       <div class="col">
         <div class="card h-100">
-          <img src="carlys\Images\PowerCapacityAndGNIRelationship.png" class="card-img-bottom"
-            alt="Data Visualisation 2 Image">
           <div class="card-body">
             <h5 class="card-title">Data Visualisation 2</h5>
             <p class="card-text"><br><br>Which state has the highest median income? Which state has the lowest?<br><br>
@@ -130,8 +106,6 @@
       </div>
       <div class="col">
         <div class="card h-100">
-          <img src="carlys\Images\PowerCapacityCountryStatusOutliers.png" class="card-img-bottom"
-            alt="Data Visualisation 3 Image">
           <div class="card-body">
             <h5 class="card-title">Data Visualisation 3</h5>
             <p class="card-text"><br><br>Which state produces the most energy per capita? which state produces the
@@ -150,8 +124,6 @@
     <div class="row">
       <div class="col">
         <div class="card h-100">
-          <img src="carlys\Images\Primary Fuel For Developed Countries.png" class="card-img-bottom"
-            alt="Data Visualisation 5 Image">
           <div class="card-body">
             <h5 class="card-title">Data Visualisation 5</h5>
             <p class="card-text"><br><br>Do states with a higher population have a higher percentage of renewable energy
@@ -164,8 +136,6 @@
       </div>
       <div class="col">
         <div class="card h-100">
-          <img src="carlys\Images\Primary Fuel For Developing Countries.png" class="card-img-bottom"
-            alt="Data Visualisation 6 Image">
           <div class="card-body">
             <h5 class="card-title">Data Visualisation 6</h5>
             <p class="card-text"><br>Do states with a higher median income have a higher percentage of renewable energy
@@ -184,9 +154,6 @@
     <div class="row">
       <div class="col">
         <div class="card mb-3">
-          <img src="carlys\Images\Primary Fuel Comparison Chart.png" class="card-img-top"
-            alt="Data Visualisation 4 Image">
-
           <div class="card-body">
             <h5 class="card-title">Data Visualisation 4 - INTERACTIVE MAP</h5>
             <p class="card-text"><br><br>
@@ -207,7 +174,11 @@
       </div>
 
       <!-- COMPLETE - GRID / PAGE LAYOUT -->
-
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+      <script src="https://d3js.org/d3.v5.min.js"></script>
+      <script src="population_plot.js"></script>
+      <script src="../JSON_data/Aus_Population.json"></script>
 </body>
 
 <!-- PAGE FOOTER -->
